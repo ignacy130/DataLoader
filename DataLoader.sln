@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLoader", "DataLoader\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLoader.Tests", "DataLoader.Tests\DataLoader.Tests.csproj", "{8B58D82A-1AE4-43BF-924E-30EB41BAD85D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLoader.Contract", "DataLoader.Contract\DataLoader.Contract.csproj", "{8873A470-53B5-4D07-A6A9-2515FF01E2F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8B58D82A-1AE4-43BF-924E-30EB41BAD85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B58D82A-1AE4-43BF-924E-30EB41BAD85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B58D82A-1AE4-43BF-924E-30EB41BAD85D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8873A470-53B5-4D07-A6A9-2515FF01E2F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8873A470-53B5-4D07-A6A9-2515FF01E2F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8873A470-53B5-4D07-A6A9-2515FF01E2F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8873A470-53B5-4D07-A6A9-2515FF01E2F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
