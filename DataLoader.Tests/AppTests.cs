@@ -9,14 +9,6 @@ using Xunit;
 
 namespace DataLoader.Tests
 {
-    public class AppHttpClientFactory : IHttpClientFactory
-    {
-        public HttpClient Create()
-        {
-            return HttpClientFactory.Create();
-        }
-    }
-
     public class AppTests
     {
         [Fact]
