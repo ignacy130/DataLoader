@@ -5,6 +5,6 @@ namespace DataLoader
 {
     public interface ILoadData
     {
-        Task RequestData();
+        Task<string> RequestData(Uri url);
     }
 }
