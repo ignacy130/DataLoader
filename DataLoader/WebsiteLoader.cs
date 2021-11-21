@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLoader.Contract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -10,9 +11,9 @@ namespace DataLoader
     public class WebsiteLoader : ILoadData
     {
         private readonly HttpClient _httpClient;
-        public WebsiteLoader(HttpClient httpClient) 
+        public WebsiteLoader(IHttpClientFactory httpClientFactory) 
         {
-            _httpClient = httpClient;
+            _httpClient = httpClientFactory.Create();
         }
 
         public Task<string> RequestData(Uri url)
