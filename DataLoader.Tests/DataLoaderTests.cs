@@ -7,8 +7,8 @@ namespace DataLoader.Tests
     public class DataLoaderTests
     {
         [Theory]
-        [InlineData("https://wikipedia.pl")]
-        public async void LoadWebsite(string url)
+        [ClassData(typeof(TestFiles))]
+        public async void LoadWebsite(WebsiteTestCase testCase)
         {
             var httpClient = new Mock<HttpClient>();
 

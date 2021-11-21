@@ -6,10 +6,10 @@ namespace DataLoader.Tests
     {
         [Theory]
         [ClassData(typeof(TestFiles))]
-        public void ReadTitle_Test(string source, string correctTitle)
+        public void ReadTitle_Test(WebsiteTestCase testCase)
         {
             var reader = new WebsiteReader();
-            Assert.Equal(correctTitle, reader.GetTitle(source));
+            Assert.Equal(testCase.CorrectTitle, reader.GetTitle(testCase.TestSource));
         }
     }
 }

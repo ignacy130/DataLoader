@@ -11,10 +11,9 @@ namespace DataLoader.Tests
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            var dataDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data");
             foreach (var item in Titles.TitlesWithSource)
             {
-                yield return new string[] { File.ReadAllText(Path.Combine(dataDir, item.Key)), item.Value };
+                yield return new object[] { item };
             }
         }
 
