@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\example.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\wikipedia.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
