@@ -17,7 +17,7 @@ namespace DataLoader.Tests.Data
             TitlesWithSource = new List<WebsiteTestCase>()
             {
                 new WebsiteTestCase("wikipedia.html","https://pl.wikipedia.org/", "Wikipedia, wolna encyklopedia"),
-                new WebsiteTestCase("example.html","https://example.com", null)
+                new WebsiteTestCase("example.html","https://example.com", "Example Domain")
             };
 
             foreach (var item in TitlesWithSource)

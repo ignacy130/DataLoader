@@ -8,7 +8,7 @@ namespace DataLoader.Tests
         public Uri Url { get; private set; }
         public string CorrectTitle { get; private set; }
         /// <summary>
-        /// May not correspond with the real page source.
+        /// Should correspond with the real page source.
         /// </summary>
         public string TestSource { get; set; }
 
