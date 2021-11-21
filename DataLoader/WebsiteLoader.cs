@@ -16,9 +16,9 @@ namespace DataLoader
             _httpClient = httpClientFactory.Create();
         }
 
-        public Task<string> RequestData(Uri url)
+        public async Task<string> RequestData(Uri url)
         {
-            throw new NotImplementedException();
+            return await (await _httpClient.GetAsync(url)).Content.ReadAsStringAsync();
         }
     }
 }

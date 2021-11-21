@@ -14,13 +14,25 @@ namespace DataLoader.Tests
         public async void LoadWebsite(WebsiteTestCase testCase)
         {
             var httpClient = new Mock<HttpClient>();
+            var msg = new HttpRequestMessage()
+            {
+                RequestUri = testCase.Url
+            };
+            var tokenSource = new CancellationTokenSource();
+            httpClient.Setup(c => c.SendAsync(msg, tokenSource.Token))
+                      .Returns(Task.FromResult(new HttpResponseMessage()
+                      {
+                          Content = new StringContent(testCase.TestSource),
+                          StatusCode = System.Net.HttpStatusCode.OK
+                      }));
 
-            httpClient.Setup(c => c.GetAsync(url)).Returns(new tes);
-
-            var fakeResult = httpClient.Object.YourMethod();
-
-            var loader = new WebsiteLoader(httpClient.Object);
-            Assert.NotEmpty(await loader.RequestData(new System.Uri(url)));
+            var httpClientFactoryMock = new Mock<IHttpClientFactory>();
+            httpClientFactoryMock.Setup(x => x.Create()).Returns(httpClient.Object);
+            var loader = new WebsiteLoader(httpClientFactoryMock.Object);
+            var result = await loader.RequestData(testCase.Url);
+            Assert.NotEmpty(result);
+            Assert.True(result.Length > 500);
+            Assert.Contains(testCase.CorrectTitle, result);
         }
     }
 }
