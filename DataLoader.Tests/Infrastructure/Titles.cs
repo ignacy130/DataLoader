@@ -17,12 +17,14 @@ namespace DataLoader.Tests.Data
             TitlesWithSource = new List<WebsiteTestCase>()
             {
                 new WebsiteTestCase("wikipedia.html","https://pl.wikipedia.org/", "Wikipedia, wolna encyklopedia"),
-                new WebsiteTestCase("example.html","https://example.com", "Example Domain")
+                new WebsiteTestCase("example.html","https://example.com", "Example Domain"),
+                new WebsiteTestCase("no-title-element.html","http://no-title.localhost", null),
+                new WebsiteTestCase("empty-title-element.html","http://empty-title.localhost", "")
             };
 
             foreach (var item in TitlesWithSource)
             {
-               item.TestSource = File.ReadAllText(Path.Combine(dataDir, item.File));
+                item.TestSource = File.ReadAllText(Path.Combine(dataDir, item.File));
             }
         }
     }
